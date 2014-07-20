@@ -9,6 +9,7 @@ Created on Tue Jul 15 19:42:53 2014
 jump = {0: [6, 4], 1: [6, 8], 2: [9, 7],
             3: [4, 8], 4: [9, 3, 0], 6: [7, 1, 0],
             7: [6, 2], 8: [3, 1], 9: [4, 2]}
+import pprint
 
 class Node(object):
     def __init__(self, value):
@@ -72,15 +73,27 @@ def get_root():
 def get_child_nodes(root):
     return [Node(i) for i in jump.get(root)]
     
-def tree_inc(root):
+def update_children(root):
     childrens = get_child_nodes(root)
+    [root.add_child(child) for child in childrens]
+    
+        
+        
     
 
 def main():
     root =  Node(1)
-    parentNode(root)
+    parentNode([root])
+    for i in range(9):    
+        for node in parentNode._parentNodes:
+            update_children(node)
+            parentNode.update_parent_nodes(node._children)
+    pprint.pprint(root.depth_first)
     
-    for child in childrens:
+    
+    
+    
+
         
     
          
