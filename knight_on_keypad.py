@@ -59,21 +59,13 @@ def update_children(root):
     childrens = get_child_nodes(root)
     [root.add_child(child) for child in childrens]
 
-from collections import Iterable
-
-def flatten(items, ignore_types=(str, bytes)):
-    for x in items:
-        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
-            yield [ i for i in flatten(x, ignore_types)]
-        else:
-            yield x
 
     
 # Example
 if __name__ == '__main__':
     root =  Node(1)
     parent_nodes = parentNode([root])
-    for i in range(10):
+    for i in range(5):
         #lets clean the parentnode and create copy
         parent_node_copy = parent_nodes._parentNodes
         # Reset the parenode Class
